@@ -8,10 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
+
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 @Data
@@ -33,5 +36,14 @@ public class Cliente {
     @ManyToOne
     @JoinColumn(name="idtipocliente", referencedColumnName="idtipocliente")
     private TipoCliente tipoCliente;
+
+    //relacion de muchos a muchos
+    @ManyToMany
+    @JoinTable(name="reserva",
+    joinColumns = @JoinColumn(name="codigocliente"),
+    inverseJoinColumns = @JoinColumn(name="idvehiculo"))
+
+    private List<Vehiculo> vehiculo;
+    
 
 }

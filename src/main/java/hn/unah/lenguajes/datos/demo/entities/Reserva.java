@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import lombok.Data;
 import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import jakarta.persistence.Column;
@@ -24,4 +25,7 @@ public class Reserva {
     private Integer dias;
 
     private BigDecimal total;
+
+
+
 }

@@ -7,7 +7,11 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+
+import java.util.List;
+
 import jakarta.persistence.Column;
 
 @Entity
@@ -28,6 +32,10 @@ public class Vehiculo {
     @ManyToOne
     @JoinColumn(name="idtipovehiculo", referencedColumnName = "idtipovehiculo")
     private TipoVehiculo tipoVehiculo;
+
+    //relacion de muchos a muchos
+    @ManyToMany(mappedBy = "vehiculo")
+    private List<Cliente> cliente;
     
 
 }
