@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hn.unah.lenguajes.datos.demo.entities.TipoCliente;
-import hn.unah.lenguajes.datos.demo.servicios.impl.TipoClienteServiceImpl;
+import hn.unah.lenguajes.datos.demo.entities.Cliente;
+import hn.unah.lenguajes.datos.demo.servicios.impl.ClienteServiceImpl;
 
 @RestController
 @RequestMapping("/api")
-public class TipoClienteController {
-    
-    @Autowired
-    private TipoClienteServiceImpl tipoClienteServiceImpl;
+public class ClienteController {
 
-    @PostMapping("/tipocliente/crear")
-    public TipoCliente crearTipoCliente(@RequestBody TipoCliente tipoCliente ){
-        return this.tipoClienteServiceImpl.crearTipoCliente(tipoCliente);
+    @Autowired
+    private ClienteServiceImpl clienteServiceImpl;
+
+    @PostMapping("/cliente/crear")
+    public Cliente crearCliente(@RequestBody Cliente cliente ){
+        return this.clienteServiceImpl.crearCliente(cliente);
     }
 
 }

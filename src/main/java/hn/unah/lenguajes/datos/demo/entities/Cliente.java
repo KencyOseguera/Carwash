@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
 import jakarta.persistence.JoinTable;
@@ -33,8 +34,8 @@ public class Cliente {
     @Column(name = "fechaingreso")
     private LocalDate fechaIngreso;
 
-    @ManyToOne
-    @JoinColumn(name="idtipocliente", referencedColumnName="idtipocliente")
+    @ManyToOne(cascade = CascadeType.ALL) //Agregarlo para que se cree y buscar los campos y ponerlos en el JSON
+    @JoinColumn(name="idtipocliente", referencedColumnName="idtipocliente") 
     private TipoCliente tipoCliente;
 
     //relacion de muchos a muchos

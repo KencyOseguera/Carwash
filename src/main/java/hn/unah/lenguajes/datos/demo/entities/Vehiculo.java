@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
 @Entity
@@ -29,7 +30,7 @@ public class Vehiculo {
 
     private Boolean disponible;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="idtipovehiculo", referencedColumnName = "idtipovehiculo")
     private TipoVehiculo tipoVehiculo;
 

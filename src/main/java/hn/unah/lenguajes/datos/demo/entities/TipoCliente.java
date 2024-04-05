@@ -11,6 +11,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+
 @Entity
 @Data
 @Table(name = "tipocliente")
@@ -23,7 +24,7 @@ public class TipoCliente {
 
     private String descripcion;
 
-    @OneToMany(mappedBy="tipoCliente")
+    @OneToMany(mappedBy="tipoCliente") //en Posman se pone este tipoCliente no en minuscula
     private List<Cliente> cliente;
 
 }
